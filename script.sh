@@ -5,4 +5,5 @@ composer install --no-dev --optimize-autoloader
 php artisan optimize
 php artisan route:cache
 php artisan cache:clear
-php artisan migrate
+php artisan migrate:fresh --seed
+php artisan serve
