@@ -7,11 +7,11 @@ To-do list application made with
 
 User seeds:
 * User: admin@admin.com
-* Password: admin
+* Password: admin123
 
 
 * User: prueba@prueba.com
-* Password: prueba
+* Password: prueba123
 
 
 DB data:
@@ -29,3 +29,6 @@ Step by step:
 * Git clone
 * In /TodoList folder:
 * Execute script (./script.sh)
+
+Heroku App:
+* http://morning-fjord-82849.herokuapp.com/
