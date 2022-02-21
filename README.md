@@ -5,21 +5,21 @@ To-do list application made with
 * Composer 2.1.9
 
 User seeds:
-* admin@admin.com
-* admin
+* User: admin@admin.com
+* Password: admin
 
 
-* prueba@prueba.com
-* prueba
+* User: prueba@prueba.com
+* Password: prueba
 
 
 DB data:
 
-DB_CONNECTION=pgsql
-DB_HOST=127.0.0.1
-DB_PORT=5432
-DB_DATABASE=todolist
-DB_USERNAME=postgres
-DB_PASSWORD=postgres
+- DB_CONNECTION=pgsql
+- DB_HOST=127.0.0.1
+- DB_PORT=5432
+- DB_DATABASE=todolist
+- DB_USERNAME=postgres
+- DB_PASSWORD=postgres
 
 Despues de crear la base de datos, ejecutar el script.sh.
