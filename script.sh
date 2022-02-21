@@ -1,4 +1,4 @@
-git clone https://github.com/maxialvareez/TodoList.git
+git pull https://github.com/maxialvareez/TodoList.git
 cp .env.example .env
 php artisan key:generate
 composer install --no-dev --optimize-autoloader
