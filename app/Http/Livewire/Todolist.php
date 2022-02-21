@@ -23,13 +23,21 @@ class Todolist extends Component
 
     public function storeItem(){
 
-        Item::create(array(
-            'data' => $this->data,
-            'done' => false,
-            'user_id' => Auth::id(),
-            'folder_id' => $this->folder
-        ));
-
+        if($this->folder == 0)
+            Item::create(array(
+                'data' => $this->data,
+                'done' => false,
+                'user_id' => Auth::id(),
+                'folder_id' => null
+            ));
+        else {
+            Item::create(array(
+                'data' => $this->data,
+                'done' => false,
+                'user_id' => Auth::id(),
+                'folder_id' => $this->folder
+            ));
+        }
         $this->data = null;
 
     }

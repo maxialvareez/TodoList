@@ -17,7 +17,7 @@ use App\Http\Livewire\Folder;
 
 Route::get('/', function () {
     return view('auth.login');
-})->name('login');
+});
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

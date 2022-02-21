@@ -13,7 +13,7 @@
                         <div class="my-4">
                             <x-jet-label for="Folders" value="{{ __('Folders') }}" />
                                 <select name="Folders" class="mt-1 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" wire:model="folder">
-                                  <option selected value="" hidden>No folder</option>
+                                  <option selected value="0">No folder</option>
                                 @foreach ($folders as $folder)
                                     <option value="{{$folder->id }}">{{ $folder->name}}</option> 
                                 @endforeach
