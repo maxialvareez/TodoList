@@ -3,6 +3,7 @@ To-do list application made with
 * PostgreSQL 12.9
 * NPM 6.14.15
 * Composer 2.1.9
+* PHP 8.0.15
 
 User seeds:
 * User: admin@admin.com
@@ -23,7 +24,7 @@ DB data:
 - DB_USERNAME=postgres
 - DB_PASSWORD=postgres
 
-Step by step to execute the app:
+Step by step:
 * Create DB with Public Schema
 * Git clone
 * In /TodoList folder:
