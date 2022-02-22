@@ -38,21 +38,31 @@
     <!-- Modal de edicion -->
 
     <x-jet-dialog-modal wire:model="openModal">
-                  <x-slot name="title">
-                      {{ __('Editar Task') }}
-                  </x-slot>
+        <x-slot name="title">
+            {{ __('Editar Task') }}
+        </x-slot>
 
-                  <x-slot name="content">
-                    <x-jet-input class="w-full" type="text" wire:model="data"/>
-                    <x-jet-input-error for="data"/>
-                  </x-slot>
+        <x-slot name="content">
+          <x-jet-input class="w-full" type="text" wire:model="data"/>
+          <x-jet-input-error for="data"/>
 
-                  <x-slot name="footer">
-                    <x-jet-button class="" wire:click="edit()" wire:loading.attr="disabled">
-                        {{ __('Confirm Task') }}
-                    </x-jet-button>
-                  </x-slot>
-              </x-jet-dialog-modal>
+          <div class="my-4">
+              <x-jet-label for="Folders" value="{{ __('Folders') }}" />
+                  <select name="Folders" class="mt-1 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" wire:model="folder">
+                    <option selected value="0">No folder</option>
+                  @foreach ($folders as $folder)
+                      <option value="{{$folder->id }}">{{ $folder->name}}</option> 
+                  @endforeach
+              </select>
+          </div>
+        </x-slot>
+
+        <x-slot name="footer">
+          <x-jet-button class="" wire:click="edit()" wire:loading.attr="disabled">
+              {{ __('Confirm Task') }}
+          </x-jet-button>
+        </x-slot>
+    </x-jet-dialog-modal>
 
     <!-- Cierro Modal -->
 

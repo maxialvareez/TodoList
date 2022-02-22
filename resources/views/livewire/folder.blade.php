@@ -83,6 +83,16 @@
         <x-slot name="content">
           <x-jet-input class="w-full" type="text" wire:model="data"/>
           <x-jet-input-error for="data"/>
+
+          <div class="my-4">
+              <x-jet-label for="Folders" value="{{ __('Folders') }}" />
+                  <select name="Folders" class="mt-1 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" wire:model="folder">
+                    <option selected value="0">No folder</option>
+                  @foreach ($folders as $folder)
+                      <option value="{{$folder->id }}">{{ $folder->name}}</option> 
+                  @endforeach
+              </select>
+          </div>
         </x-slot>
 
         <x-slot name="footer">

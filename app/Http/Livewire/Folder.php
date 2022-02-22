@@ -28,6 +28,7 @@ class Folder extends Todolist
 
     public function render()
     {
+        $this->folders = \App\Models\Folder::where('user_id', Auth::id())->get();
         $this->items = Item::where('folder_id', $this->folderid)->get();
         return view('livewire.folder');
     }

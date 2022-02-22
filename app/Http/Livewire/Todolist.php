@@ -19,9 +19,20 @@ class Todolist extends Component
     public $done;
     public $name;
     public $folder;
-    public $expand;
+
+    public function rules(){
+        return [
+        'data' => 'required',
+        ];
+    }
+
+    protected $messages = [
+        'data.required' => 'Esta campo no puede estar vacio.',
+    ];
 
     public function storeItem(){
+
+        $this->validate();
 
         if($this->folder == 0)
             Item::create(array(
@@ -77,9 +88,18 @@ class Todolist extends Component
 
     public function edit(){
         $item = Item::findOrFail($this->idTask);
-    
-        $item->update(['data' => $this->data]);
 
+        if($this->folder == 0 && $this->data == null){
+            $item->update(['folder_id' => null]);}
+        else if($this->folder == 0 && $this->data != null){
+            $item->update(['data' => $this->data, 'folder_id' => null]);
+        } else if($this->folder != 0 && $this->data == null){
+            $item->update(['folder_id' => $this->folder]);
+        } else if ($this->folder != 0 && $this->data != null){
+            $item->update(['data' => $this->data, 'folder_id' => $this->folder]);
+        }
+    
+    
         $this->openModal = false;
         $this->data = null;
         
